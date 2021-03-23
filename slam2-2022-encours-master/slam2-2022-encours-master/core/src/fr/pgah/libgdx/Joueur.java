@@ -3,6 +3,7 @@ package fr.pgah.libgdx;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
@@ -17,19 +18,18 @@ public class Joueur {
   int coordY;
   int longueurEffective;
   int hauteurEffective;
-  //Rectangle zoneDeHit; // pour la détection des collisions
-
+  Rectangle zoneDeHit; // pour la détection des collisions
 
   public Joueur() {
-    //img = new Texture("toto.png");
+    img = new Texture("toto.png");
     longueurEffective = img.getWidth();
     hauteurEffective = img.getHeight();
     longueurFenetre = Gdx.graphics.getWidth();
     hauteurFenetre = Gdx.graphics.getHeight();
-    //zoneDeHit = new Rectangle(coordX, coordY, longueurEffective, hauteurEffective);
+    zoneDeHit = new Rectangle(coordX, coordY, longueurEffective, hauteurEffective);
   }
 
-  /*public void majEtat() {
+  public void majEtat() {
     deplacer();
     forcerAResterDansLeCadre();
   }
@@ -77,13 +77,13 @@ public class Joueur {
     // Coordonnées ont potentiellement changé
     // => Mise à jour zone de "hit"
     zoneDeHit.setPosition(coordX, coordY);
-  }*/
+  }
 
   public void dessiner(SpriteBatch batch) {
     batch.draw(img, coordX, coordY);
   }
 
-  /*public boolean estEnCollisionAvec(ArrayList<Sprite> sprites) {
+  public boolean estEnCollisionAvec(ArrayList<Sprite> sprites) {
     // pour chaque sprite dans sprites
     // si le sprite touche le joueur
     // alors renvoyer vrai
@@ -109,5 +109,5 @@ public class Joueur {
 
   public Sprite majEtat(ArrayList<Sprite> sprites) {
     return null;
-  }*/
+  }
 }

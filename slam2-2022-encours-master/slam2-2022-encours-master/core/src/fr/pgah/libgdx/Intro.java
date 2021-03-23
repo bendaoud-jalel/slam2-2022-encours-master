@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.ArrayList;
 
-
 public class Intro extends ApplicationAdapter {
 
   final int NB_SPRITES = 5;
@@ -42,14 +41,13 @@ public class Intro extends ApplicationAdapter {
     joueur = new Joueur();
   }
 
-
   @Override
   public void render() {
     // gameOver est mis à TRUE dès qu'un "hit" est repéré
     if (!gameOver) {
       reinitialiserArrierePlan();
       majEtatProtagonistes();
-      //majEtatJeu();
+      majEtatJeu();
       dessiner();
     }
   }
@@ -67,15 +65,15 @@ public class Intro extends ApplicationAdapter {
     }
 
     // Joueur
-    //joueur.majEtat();
+    joueur.majEtat();
   }
 
-  /*private void majEtatJeu() {
+  private void majEtatJeu() {
     // On vérifie si le jeu continue ou pas
     if (joueur.estEnCollisionAvec(sprites)) {
       gameOver = true;
     }
-  }*/
+  }
 
   private void dessiner() {
     batch.begin();

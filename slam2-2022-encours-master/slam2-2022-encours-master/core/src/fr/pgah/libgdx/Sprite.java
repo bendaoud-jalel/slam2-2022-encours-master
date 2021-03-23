@@ -2,7 +2,6 @@ package fr.pgah.libgdx;
 
 import java.util.Random;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
@@ -24,8 +23,6 @@ public class Sprite {
   int hauteurEffective;
   Random generateurAleatoire;
   Rectangle zoneDeHit;
-
-
 
   public Sprite(String img) {
     // On pourrait aussi copier tout le contenu de la méthode ici
@@ -105,18 +102,6 @@ public class Sprite {
     // Coordonnées modifiées => Mise à jour de la zone de "hit"
     zoneDeHit.setPosition(coordX, coordY);
 
-  }
-  public int mouseClicked(Input e){
-    if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)){
-      int X = e.getX();
-      int Y = e.getY();
-    if(X == coordX){
-      return X;
-    } else{
-      return Y;
-    }
-  }
-    return coordX;
   }
 
   public void dessiner(SpriteBatch batch) {
